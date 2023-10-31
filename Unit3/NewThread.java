@@ -14,8 +14,8 @@ public class NewThread implements Runnable{
         {
             for(int n = 5; n > 0; n--)
             {
-                System.out.println(n);
-                Thread.sleep(n*1000);
+                System.out.println("Child thread :"+n);
+                Thread.sleep(400);
             }
         }
         catch(InterruptedException e)
@@ -25,15 +25,15 @@ public class NewThread implements Runnable{
         System.out.println("Exiting child thread");
     }
 
-    public static void main()
+    public static void main(String args[])
     {
         new NewThread();
         try
         {
             for(int n = 5; n > 0; n--)
             {
-                System.out.println(n);
-                Thread.sleep(n*1000);
+                System.out.println("Main Thread :"+n);
+                Thread.sleep(1000);
             }
         }
         catch(InterruptedException e)
